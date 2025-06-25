@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GT7 engineer</string>
+    <string-array name="types_admission">
+        <item>Atmosphérique</item>
+        <item>Turbo</item>
+        <item>Compresseur</item>
+    </string-array>
+
+    <string-array name="types_regime">
+        <item>Bas régimes</item>
+        <item>Moyen régimes</item>
+        <item>Haut régimes</item>
+        <item>Très haut régimes</item>
+    </string-array>
+
+</resources>

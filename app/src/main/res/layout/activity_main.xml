@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Voiture et specs de base -->
+        <EditText
+            android:id="@+id/modele"
+            android:hint="Modèle (ex: Corvette C8 2020)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/poids"
+            android:hint="Poids (kg)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/puissance"
+            android:hint="Puissance (ch)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/couple"
+            android:hint="Couple (Nm)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ppCible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PP cible (optionnel)"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/nomCircuit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom du circuit (optionnel)"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- Exemple de champ intervalle : Hauteur avant -->
+        <TextView
+            android:text="Hauteur de carrosserie avant (mm)"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/hauteurAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/hauteurAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Hauteur arrière -->
+        <TextView
+            android:text="Hauteur de carrosserie arrière (mm)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/hauteurArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/hauteurArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Barre anti-roulis -->
+        <TextView
+            android:text="Barre anti-roulis avant (1 à 10)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/barreAntiRoulisAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/barreAntiRoulisAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Barre anti-roulis arrière (1 à 10)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/barreAntiRoulisArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/barreAntiRoulisArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Rapport d'amortissement : Compression -->
+        <TextView
+            android:text="Amortissement compression avant (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/compressionAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/compressionAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Rapport d'amortissement : Compression arrière -->
+        <TextView
+            android:text="Amortissement compression arrière (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/compressionArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/compressionArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Expansion amortissement -->
+        <TextView
+            android:text="Amortissement expansion avant (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/expansionAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/expansionAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Amortissement expansion arrière (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/expansionArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/expansionArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Fréquence naturelle -->
+        <TextView
+            android:text="Fréquence naturelle avant (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/frequenceNaturelleAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/frequenceNaturelleAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Fréquence naturelle arrière (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/frequenceNaturelleArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/frequenceNaturelleArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Carrossage -->
+        <TextView
+            android:text="Carrossage négatif avant (°)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/carrossageAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/carrossageAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Carrossage négatif arrière (°)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/carrossageArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/carrossageArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Pincement -->
+        <TextView
+            android:text="Pincement avant (°)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/pincementAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/pincementAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="Pincement arrière (°)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/pincementArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/pincementArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="numberDecimal"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Couple initial différentiel -->
+        <TextView
+            android:text="Couple initial différentiel arrière"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/coupleInitialMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/coupleInitialMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Sensibilité à l'accélération différentiel -->
+        <TextView
+            android:text="Sensibilité accélération différentiel arrière"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/sensibiliteAccelMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/sensibiliteAccelMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Sensibilité freinage différentiel -->
+        <TextView
+            android:text="Sensibilité freinage différentiel arrière"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/sensibiliteFreinMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/sensibiliteFreinMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Appui aéro avant -->
+        <TextView
+            android:text="Appui aérodynamique avant"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/appuiAvantMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/appuiAvantMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Appui aéro arrière -->
+        <TextView
+            android:text="Appui aérodynamique arrière"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/appuiArriereMin"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Min"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/appuiArriereMax"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Max"
+                android:inputType="number"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Nombre de rapports -->
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de rapports (boîte)"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/nbRapports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex: 6 ou 8"
+            android:inputType="number"/>
+
+        <LinearLayout
+            android:id="@+id/containerConfigsPuissance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/ajouterConfigBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter une config de puissance"
+            android:layout_marginTop="12dp" />
+
+        <!-- Bouton envoyer -->
+        <Button
+            android:id="@+id/envoyerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Générer avec Gemini"
+            android:layout_marginTop="24dp" />
+
+        <!-- ProgressBar chargement -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
