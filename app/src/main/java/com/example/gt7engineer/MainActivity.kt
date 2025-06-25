@@ -1,6 +1,3 @@
-// Ce fichier Kotlin (MainActivity.kt) permet d'ajouter dynamiquement des configurations moteur
-// (type d'admission + régime moteur + puissance + couple) pour affiner le prompt d'une IA de réglage voiture GT7.
-
 package com.example.gt7engineer
 
 import android.app.AlertDialog

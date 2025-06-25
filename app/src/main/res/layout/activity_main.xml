@@ -137,6 +137,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="1"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/barreAntiRoulisAvantMax"
@@ -144,6 +145,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="10"
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -164,6 +166,7 @@
                 android:id="@+id/barreAntiRoulisArriereMin"
                 android:layout_weight="1"
                 android:layout_width="0dp"
+                android:text="1"
                 android:layout_height="wrap_content"
                 android:hint="Min"
                 android:inputType="number" />
@@ -173,6 +176,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="10"
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -433,6 +437,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="-1"
                 android:inputType="numberDecimal" />
             <EditText
                 android:id="@+id/pincementAvantMax"
@@ -440,6 +445,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="1"
                 android:inputType="numberDecimal"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -462,6 +468,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="-1"
                 android:inputType="numberDecimal" />
             <EditText
                 android:id="@+id/pincementArriereMax"
@@ -469,6 +476,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="1"
                 android:inputType="numberDecimal"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -492,6 +500,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="5"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/coupleInitialMax"
@@ -499,6 +508,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="60"
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -522,6 +532,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="5"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/sensibiliteAccelMax"
@@ -529,6 +540,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="60"
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
@@ -552,6 +564,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Min"
+                android:text="5"
                 android:inputType="number" />
             <EditText
                 android:id="@+id/sensibiliteFreinMax"
@@ -559,6 +572,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Max"
+                android:text="60"
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </LinearLayout>
